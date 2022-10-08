@@ -1,0 +1,22 @@
+{
+  "name": "core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HelpHack/core.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HelpHack/core/issues"
+  },
+  "homepage": "https://github.com/HelpHack/core#readme",
+  "dependencies": {
+    "helphack-router": "git+https://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:x-oauth-basic@github.com/HelpHack/router-js.git#main"
+  }
+}
