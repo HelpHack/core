@@ -1,17 +1,18 @@
-import { Router, HttpServer } from 'helphack-router'
-import createRabbitManger from './mq';
+import express from 'express'
+import bodyParser from 'body-parser'
+import Database from './database/index.js'
 
 export default class App {
   start = async () => {
-    this.queueManager = await createRabbitManger()
-    this.router = new Router(this.queueManager)
-    this.httpServer = new HttpServer(8080, {
-      rabbitmq: async () => ({ status: this.queueManager.isHealthy ? 'OK' : 'DOWN' }),
+    const app = express()
+
+    app.use(express.json());
+
+    await new Database(app).start()
+
+    app.get('/', (req) => {
+      console.log(req)
     })
-
-    this.httpServer.start();
-
-    this.router.get('core', '/core/requests', this.handleRequestSearch)
   }
 
   handleRequestSearch = async (request) => {

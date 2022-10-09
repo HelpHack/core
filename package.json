@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,14 @@
   },
   "homepage": "https://github.com/HelpHack/core#readme",
   "dependencies": {
-    "helphack-router": "git+https://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:x-oauth-basic@github.com/HelpHack/router-js.git#main"
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helphack-router": "git+https://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:x-oauth-basic@github.com/HelpHack/router-js.git#main",
+    "mongodb": "^4.10.0",
+    "mongoose": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
